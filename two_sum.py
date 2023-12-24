@@ -11,5 +11,9 @@ numMAp = {}
 n = len(nums)
 
 for i in range(n):
-    numMAp[nums[i]] = i #assign each number in the num array into a dictionary whose key is the actual number and the value is their indice. 
-print(numMAp)
+    numMAp[nums[i]] = i #assign each number in the num array into a dictionary whose key is the actual number and the value is their indice.
+
+for i in range(n):
+    complement = target - nums[i] #for each key in the numMap dict, calculate the complement value that makes target
+    if complement in numMAp and numMAp[complement] != i: #if complement is also in numMAp and indice of complement is not indice of key, incase number is even so that there 2 similiar inside the numMap. 
+        print(i, numMAp[complement])
